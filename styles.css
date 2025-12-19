@@ -8,8 +8,24 @@ body
      
 }
 
+.signin-btn {
+    
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
 
+    background: transparent;
+    transition: all 0.3s ease;
+}
 
+.signin-btn:hover {
+    background-color: rgb(197, 0, 197);
+    border-color: rgb(197, 0, 197);
+    transform: scale(1.05);
+}
 
 .navbar .nav-link
 {
@@ -17,19 +33,11 @@ body
 }
 
 nav a 
-{
-    
-    text-decoration: none;
-    
+{   
+    text-decoration: none;  
 }
 
-.navbar-nav
-{
-    display: flex;
-    justify-content:space-evenly;
-    width: 100%;
-    
-}
+
 
 .nav-link:hover
 {
@@ -135,6 +143,16 @@ nav a
 }
 
 #Courses
+{
+    height: 100vh;
+    text-align:center;
+    align-content: center;
+    padding-top: 70px; 
+    margin: 30px;
+
+}
+
+#Testimonials
 {
     height: 100vh;
     text-align:center;
