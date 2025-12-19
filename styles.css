@@ -1,0 +1,157 @@
+body 
+{
+    
+     background-color: #000000;
+     scroll-behavior: smooth;
+     font-family: "Poppins", sans-serif;
+     color: white;
+     
+}
+
+
+
+
+.navbar .nav-link
+{
+    color: white;
+}
+
+nav a 
+{
+    
+    text-decoration: none;
+    
+}
+
+.navbar-nav
+{
+    display: flex;
+    justify-content:space-evenly;
+    width: 100%;
+    
+}
+
+.nav-link:hover
+{
+    color:rgb(197, 0, 197);
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+
+}
+
+#Home
+{
+     height: 100vh;
+     text-align:center;
+     align-content: center;
+     padding-top: 70px;  
+}
+
+#niviname
+{
+    margin: 10px;
+    
+}
+
+#desig 
+{
+    margin: 20px;
+    
+}
+#role-text {
+  display: inline-block;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#profilephoto
+{
+   width: 30vw;
+   aspect-ratio: 1/1;
+   border-radius: 50%;
+   transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+   margin-bottom: 30px;;
+}
+
+
+
+#tagline
+{
+    margin: 20px;
+}
+
+.hovereffect
+{
+    
+    transform-origin: center;
+}
+.hovereffect:hover
+{
+    transition: all 1s ease;
+    transform: scale(1.05);
+    color:rgb(197, 0, 197);    
+}
+
+.hovereffectimg
+{
+    
+    transform-origin: center;
+}
+.hovereffectimg:hover
+{
+    transition: all 1s ease;
+    transform: scale(1.1);
+    color:rgb(197, 0, 197);  
+    border: 3px solid violet;  
+}
+#aboutlogo:hover {
+    filter: drop-shadow(0 0 5px violet) drop-shadow(0 0 10px violet);
+    transform: scale(1.2);
+    transition: all 0.5s ease;
+}
+
+#About
+{
+    height: 100vh;
+    text-align:center;
+    align-content: center;
+    padding-top: 70px; 
+    margin: 30px;
+
+}
+
+#aboutlogo
+{
+    height: 20vh;
+    margin: 10vh;
+}
+
+#Courses
+{
+    height: 100vh;
+    text-align:center;
+    align-content: center;
+    padding-top: 70px; 
+    margin: 30px;
+
+}
+
+#Contact
+{
+    height: 100vh;
+    text-align:center;
+    align-content: center;
+    padding-top: 70px; 
+    margin: 30px;
+
+}
+
+
