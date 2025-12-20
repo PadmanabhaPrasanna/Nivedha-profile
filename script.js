@@ -5,7 +5,6 @@ const roles = [
   "Coding Educator",
   "Tech Mentor"
 ];
-
 let index = 0;
 const roleText = document.getElementById("role-text");
 
@@ -22,5 +21,29 @@ setInterval(() => {
   }, 600);
 
 }, 2500);
+
+//Form input taking
+document.getElementById("form").addEventListener("submit", frontSubmit);
+
+function frontSubmit(e)
+{
+    e.preventDefault(); //To prevent req.url: /? which caused trouble
+
+    const Name = document.getElementById("Name").value;
+    const Country = document.getElementById("Country").value;
+    const Mail = document.getElementById("Mail").value;
+    const Message = document.getElementById("Message").value;
+
+    const saveObj = {Name: Name, Country: Country, Mail: Mail, Message: Message};
+    console.log(saveObj);
+
+    
+    fetch("/saveform", {method:"POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(saveObj)})
+    .then(res => res.text())
+    .then(msg => {alert("Server says: "+msg); document.getElementById("form").reset();})
+    .catch(err => alert("Server says: "+err));
+
+
+}
 
 
