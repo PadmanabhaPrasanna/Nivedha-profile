@@ -24,7 +24,6 @@ setInterval(() => {
 
 //Form input taking
 document.getElementById("form").addEventListener("submit", frontSubmit);
-
 function frontSubmit(e)
 {
     e.preventDefault(); //To prevent req.url: /? which caused trouble
