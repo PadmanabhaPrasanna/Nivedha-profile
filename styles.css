@@ -172,4 +172,23 @@ nav a
 
 }
 
+#form
+{
+    border: 1px solid whitesmoke;
+    text-align: left;
+    padding: 20px;   
+}
+
+.inputboxes
+{
+    border-radius: 5px;
+    width: 70vw;
+    
+}
+
+.messagebox
+{
+    height: 20vh;
+}
+
 
