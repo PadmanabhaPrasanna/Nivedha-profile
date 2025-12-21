@@ -39,7 +39,15 @@ function frontSubmit(e)
     
     fetch("/saveform", {method:"POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(saveObj)})
     .then(res => res.text())
-    .then(msg => {alert("Server says: "+msg); document.getElementById("form").reset();})
+    .then(msg => 
+        { 
+             console.log("Server says: "+msg); 
+
+             const modal = new bootstrap.Modal(document.getElementById("ModalSuccess"));
+             modal.show();
+             document.getElementById("form").reset();
+   
+        })
     .catch(err => alert("Server says: "+err));
 
 
