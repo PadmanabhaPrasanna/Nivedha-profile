@@ -19,7 +19,7 @@
 
 <!--1. Navigation bar -->
 <nav class="navbar navbar-expand-sm  fixed-top navbar-dark">
-  <div class="container-fluid d-flex align-items-center">
+  <div class="container-fluid d-flex ">
 
     <!--Logo on left-->
      <a class="navbar-brand" href="#"><img src="logo.png" width="50px"></a>
@@ -30,21 +30,21 @@
     </button>
     <!--2. Center pane-->
     <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav nav-pills" role="tablist">
         <li class="nav-item px-3">
-          <a class="nav-link" href="#Home">Home</a>
+          <a class="nav-link active" href="#Home" data-bs-toggle="pill">Home</a>
         </li>
         <li class="nav-item px-3">
-          <a class="nav-link" href="#About">About</a>
+          <a class="nav-link" href="#About" data-bs-toggle="pill">About</a>
         </li>
         <li class="nav-item px-3">
-          <a class="nav-link" href="#Courses">Courses</a>
+          <a class="nav-link" href="#Courses" data-bs-toggle="pill">Courses</a>
         </li>  
         <li class="nav-item px-3">
-          <a class="nav-link" href="#Testimonials">Testimonials</a>
+          <a class="nav-link" href="#Testimonials" data-bs-toggle="pill">Testimonials</a>
         </li> 
         <li class="nav-item px-3">
-          <a class="nav-link" href="#Contact">Contact</a>
+          <a class="nav-link" href="#Contact" data-bs-toggle="pill">Contact</a>
         </li>    
       </ul>
     </div>
@@ -53,8 +53,9 @@
 
   </div>
 </nav>
-
-    <div id="Home">
+    <!--extra div for containing tab content-->
+  <div class="tab-content">
+    <div id="Home" class="container tab-pane active">
         
          <img id="profilephoto" src="profilephoto.png" class="hovereffectimg">
         
@@ -66,7 +67,7 @@
 
     </div>
 
-    <div id="About">
+    <div id="About" class="container tab-pane">
          <img src="logo.png" id="aboutlogo" class="aboutlogo">
          <p>Software engineer turned technology educator with over seven years of industry experience.</p>
          <p>My background in real-world software development allows me to bring practical insight and structured problem-solving into every learning experience. After working on production-level systems, I transitioned into tech education to help learners understand not just how to code, but how to think like engineers.</p>
@@ -74,20 +75,20 @@
         
     </div>
 
-    <div id="Courses">
+    <div id="Courses" class="container tab-pane">
         <p>beginner courses</p>
         <p>Advanced courses</p>
         
     </div>
 
-    <div id="Testimonials">
+    <div id="Testimonials" class="container tab-pane">
         <p>Testimonials here</p>
         
         
     </div>
 
 
-    <div id="Contact">
+    <div id="Contact" class="container tab-pane">
             <h1>Excited to know more? <br> Let's talk</h1><br><br>
         <form id="form" >
     
@@ -163,6 +164,7 @@
         
 
     </div>
+  </div>
 
 </body>
 
