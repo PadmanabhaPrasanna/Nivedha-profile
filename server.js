@@ -137,7 +137,7 @@ const server = http.createServer((req,res)=> {
                 const newEntry = new formData(data);
                 await newEntry.save();
                 res.writeHead(200, {"Content-Type": "text/plain"});
-                res.end("Saved in mongDB");
+                res.end("Saved in DB");
                 console.log("From backend: Saved Successfully");
             }
             catch (err) {

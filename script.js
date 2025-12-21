@@ -38,18 +38,24 @@ function frontSubmit(e)
 
     
     fetch("/saveform", {method:"POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(saveObj)})
-    .then(res => res.text())
+    .then(res => { if (!res.ok){throw new Error("Failed to save form");} return res.text();})
     .then(msg => 
         { 
-             console.log("Server says: "+msg); 
-
-             const modal = new bootstrap.Modal(document.getElementById("ModalSuccess"));
-             modal.show();
+             console.log("Server says: S "+msg); 
+             
+             const modalS = new bootstrap.Modal(document.getElementById("ModalSuccess"));
+             modalS.show();
              document.getElementById("form").reset();
    
         })
-    .catch(err => alert("Server says: "+err));
+    .catch(err => 
+        {
+             console.log("Server says: F "+err); 
+             
+             const modalF = new bootstrap.Modal(document.getElementById("ModalFail"));
+             modalF.show();
 
+        });
 
 }
 
