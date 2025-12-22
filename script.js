@@ -22,7 +22,7 @@ setInterval(() => {
 
 }, 2500);
 
-//Form input taking
+//Form input taking &sending to backend
 document.getElementById("form").addEventListener("submit", frontSubmit);
 function frontSubmit(e)
 {
@@ -36,13 +36,12 @@ function frontSubmit(e)
     const saveObj = {Name: Name, Country: Country, Mail: Mail, Message: Message};
     console.log(saveObj);
 
-    
+
     fetch("/saveform", {method:"POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(saveObj)})
     .then(res => { if (!res.ok){throw new Error("Failed to save form");} return res.text();})
     .then(msg => 
         { 
              console.log("Server says: S "+msg); 
-             
              const modalS = new bootstrap.Modal(document.getElementById("ModalSuccess"));
              modalS.show();
              document.getElementById("form").reset();
@@ -51,7 +50,6 @@ function frontSubmit(e)
     .catch(err => 
         {
              console.log("Server says: F "+err); 
-             
              const modalF = new bootstrap.Modal(document.getElementById("ModalFail"));
              modalF.show();
 

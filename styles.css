@@ -72,17 +72,16 @@ nav a
 }
 .fade-out {
   opacity: 0;
-  transform: translateY(10px);
+  transform: scale(1);
 }
-
 .fade-in {
   opacity: 1;
-  transform: translateY(0);
+  transform: scale(1);
 }
 
 #profilephoto
 {
-   width: 30vw;
+   width: 300px;
    aspect-ratio: 1/1;
    border-radius: 50%;
    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
@@ -105,7 +104,6 @@ nav a
 {
     transition: all 1s ease;
     transform: scale(1.05);
-    color:rgb(197, 0, 197);    
 }
 
 .hovereffectimg
@@ -152,15 +150,6 @@ nav a
 
 }
 
-#Testimonials
-{
-    height: 100vh;
-    text-align:center;
-    align-content: center;
-    padding-top: 70px; 
-    margin: 30px;
-
-}
 
 #Contact
 {
@@ -190,5 +179,57 @@ nav a
 {
     height: 20vh;
 }
+
+
+/*Infinite scroll*/
+.tag-list
+{
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.inner
+{
+    width: fit-content;
+    display: flex;
+    gap: 2rem;
+    animation: loop 20s linear infinite;
+}
+.tag 
+{
+    /*display: flex;*/
+    width: 250px;
+    text-align: left;
+    /*align-items: center;*/
+    gap: 0 0.2rem;
+    color:rgb(247, 247, 247);
+    font-size: 0.9rem;
+    background-color: rgb(72, 72, 72);
+    padding: 0.7rem 1rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 0.1rem 0.2rem rgb(45, 4, 79), 0 0.1rem 0.5rem rgb(34, 3, 78), 0 0.2rem 1.5rem rgb(49, 3, 82);
+}
+
+.scrollfade {
+    position: absolute;
+    background: linear-gradient(90deg, rgb(0, 0, 0), transparent 10%, transparent 90%, rgb(0, 0, 0));
+    inset: 0;
+    pointer-events: none;
+}
+    
+@keyframes loop {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+
+
 
 

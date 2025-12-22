@@ -31,7 +31,7 @@ const server = http.createServer((req,res)=> {
      //testing logger for req.url and req.method:
     console.log("req.url: " + req.url +"\n"+ "req.method " + req.method + "\n");
 
-    //html serve:
+    //index.html serve:
     if(req.method=="GET" && req.url=="/")
     {
         let pathway = path.join(__dirname, "index.html");
@@ -40,6 +40,24 @@ const server = http.createServer((req,res)=> {
             {
                 res.writeHead(500, {"Content-Type": "text/plain"});
                 res.end("From backend: Failed to load index.html"+err);
+            }
+            else
+            {
+                res.writeHead(200, {"Content-Type": "text/html"});
+                res.end(data);
+            }
+        });
+        return;
+    }
+     //loginpage.html serve
+    else if(req.method=="GET" && req.url=="/loginpage.html")
+    {
+        let pathway = path.join(__dirname, "loginpage.html");
+        fs.readFile(pathway, "utf8", (err,data)=> {
+            if (err)
+            {
+                res.writeHead(500, {"Content-Type": "text/plain"});
+                res.end("From backend: Failed to load loginpage.html"+err);
             }
             else
             {
