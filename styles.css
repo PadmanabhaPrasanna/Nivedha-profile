@@ -68,7 +68,7 @@ nav a
 }
 #role-text {
   display: inline-block;
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .fade-out {
   opacity: 0;
@@ -130,8 +130,14 @@ nav a
     text-align:center;
     align-content: center;
     padding-top: 70px; 
-    margin: 30px;
-
+    margin: 20px;
+}
+.abouttext {
+    
+    width: 70vw;
+    margin: 0 auto;
+    
+    
 }
 
 #aboutlogo
@@ -163,15 +169,17 @@ nav a
 
 #form
 {
+    margin: 0 auto;
     border: 1px solid whitesmoke;
     text-align: left;
-    padding: 20px;   
+    padding: 20px;  
+    width:  60vw;
 }
 
 .inputboxes
 {
     border-radius: 5px;
-    width: 70vw;
+    width: 50vw;
     
 }
 
@@ -184,14 +192,15 @@ nav a
 /*Infinite scroll*/
 .tag-list
 {
-    width: 100vw;
+    width: 90vw;
+    max-width: 1200px;
+    margin-inline: auto;
     position: relative;
     overflow: hidden;
 }
-
 .inner
 {
-    width: fit-content;
+    width: max-content;
     display: flex;
     gap: 2rem;
     animation: loop 20s linear infinite;
@@ -210,14 +219,16 @@ nav a
     border-radius: 0.4rem;
     box-shadow: 0 0.1rem 0.2rem rgb(45, 4, 79), 0 0.1rem 0.5rem rgb(34, 3, 78), 0 0.2rem 1.5rem rgb(49, 3, 82);
 }
-
+.tag p {
+    margin-bottom: 0.4rem;
+}
 .scrollfade {
     position: absolute;
-    background: linear-gradient(90deg, rgb(0, 0, 0), transparent 10%, transparent 90%, rgb(0, 0, 0));
+    background: linear-gradient(90deg, rgb(0, 0, 0), transparent 8%, transparent 92%, rgb(0, 0, 0));
     inset: 0;
     pointer-events: none;
-}
     
+}   
 @keyframes loop {
     0% {
         transform: translateX(0);
@@ -225,6 +236,9 @@ nav a
     100% {
         transform: translateX(-50%);
     }
+}
+.tag-list:hover .inner {
+    animation-play-state: paused;
 }
 
 
