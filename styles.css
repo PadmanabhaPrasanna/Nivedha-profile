@@ -3,7 +3,7 @@ body
     
      background-color: #000000;
      scroll-behavior: smooth;
-     font-family: "Poppins", sans-serif;
+     font-family: 'Nunito', sans-serif;
      color: white;
      
 }
@@ -88,8 +88,6 @@ nav a
    margin-bottom: 30px;;
 }
 
-
-
 #tagline
 {
     margin: 20px;
@@ -131,13 +129,12 @@ nav a
     align-content: center;
     padding-top: 70px; 
     margin: 20px;
+    
 }
 .abouttext {
     
     width: 70vw;
     margin: 0 auto;
-    
-    
 }
 
 #aboutlogo
@@ -148,12 +145,64 @@ nav a
 
 #Courses
 {
-    height: 100vh;
+    min-height: 100vh;
     text-align:center;
     align-content: center;
     padding-top: 70px; 
     margin: 30px;
-
+}
+.coursebox {
+  
+    width: 250px;
+    margin: 10px;
+    text-align: left;
+    /*align-items: center;*/
+    gap: 0 0.2rem;
+    color:rgb(247, 247, 247);
+    font-size: 0.9rem;
+    background-color: rgb(72, 72, 72);
+    padding: 0.7rem 1rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 0.1rem 0.2rem rgb(45, 4, 79), 0 0.1rem 0.5rem rgb(34, 3, 78), 0 0.2rem 1.5rem rgb(49, 3, 82);
+}
+.coursebox:hover {
+    filter: drop-shadow(0 0 5px violet) drop-shadow(0 0 10px violet);
+    transform: scale(1.05);
+    transition: all 0.5s ease; 
+}
+.enroll-btn {
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    background: black;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+   
+}
+.coursebox:hover .enroll-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    display: inline-block;
+    margin-top: 10px;
+}
+.enroll-btn:hover {
+    background-color: rgb(197, 0, 197);
+    border-color: rgb(29, 4, 29);
+    transform: scale(1.05);
+}
+@media (hover: none) {
+  .enroll-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
 }
 
 
@@ -186,6 +235,10 @@ nav a
 .messagebox
 {
     height: 20vh;
+}
+
+.testimonytitle {
+  padding-bottom: 40px;
 }
 
 
@@ -241,7 +294,7 @@ nav a
     animation-play-state: paused;
 }
 
-/* Scroll effect */
+/* smooth Scroll effect */
 .autoshow {
     animation: text-appear both;
     animation-timeline: view();
@@ -258,114 +311,132 @@ nav a
     }
 }
 
-/*philisophy tree*/
+/*image show */
 
-.philosophy-tree {
-  max-width: 1100px;
-  margin: 6rem auto;
-  padding: 2rem;
-  text-align: center;
-  color: #e6e6e6;
+.fadeup {
+  animation: fadeup both;
+  animation-timeline: view();
+
 }
 
-.tree-title {
-  font-size: 2.2rem;
-  margin-bottom: 4rem;
-  letter-spacing: 1px;
+.timeline-item:nth-child(1) {
+  animation-range: entry 20% cover 30%;
+}
+.timeline-item:nth-child(2) {
+  animation-range: entry 30% cover 40%;
+}
+.timeline-item:nth-child(3) {
+  animation-range: entry 40% cover 50%;
+}
+.timeline-item:nth-child(4) {
+  animation-range: entry 50% cover 60%;
+}
+.timeline-item:nth-child(5) {
+  animation-range: entry 60% cover 70%;
 }
 
-/* COMMON NODE STYLE */
-.tree-node {
-  background: #0b0d12;
-  border-radius: 0.6rem;
-  padding: 1.2rem 1.5rem;
-  box-shadow:
-    0 0.4rem 1.2rem rgba(0, 0, 0, 0.8),
-    0 0 1.4rem rgba(90, 80, 160, 0.25);
-  margin-inline: auto;
-}
-
-/* ROOT */
-.root {
-  max-width: 420px;
-  margin-bottom: 3rem;
-  position: relative;
-}
-
-/* TRUNK */
-.trunk {
-  max-width: 360px;
-  margin-bottom: 4rem;
-  position: relative;
-}
-
-/* BRANCH CONTAINER */
-.branches {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-/* BRANCHES */
-.branch {
-  width: 280px;
-}
-
-/* LIST STYLE */
-.tree-node ul {
-  list-style: none;
-  padding: 0;
-  margin: 0.8rem 0 0;
-}
-
-.tree-node li {
-  padding: 0.35rem 0;
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-/* HEADINGS */
-.tree-node h3,
-.tree-node h4 {
-  margin-bottom: 0.6rem;
-  font-weight: 600;
-}
-
-/* CONNECTING LINES */
-.root::after {
-  content: "";
-  width: 2px;
-  height: 40px;
-  background: #444;
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-}
-
-.trunk::after {
-  content: "";
-  width: 2px;
-  height: 50px;
-  background: #444;
-  position: absolute;
-  bottom: -50px;
-  left: 50%;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .branches {
-    flex-direction: column;
-    align-items: center;
+@keyframes fadeup {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
 
 
+/* Philosophy tree*/
+.tree-title {
+  font-size: 2.2rem;
+  margin-top: 4rem;
+  letter-spacing: 1px;
+}
 
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 6rem auto;
+}
 
+/* Center vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255,255,255,0.15);
+  transform: translateX(-50%);
+}
+/*Timeline rows*/
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin: 4rem 0;
+}
+/*Content box*/
+.content {
+  color: white;
+  padding: 2.2rem 0rem 2.2rem 2rem ;
+  max-width: 420px;
+  font-size: 1.3rem;  
+}
+/*photo styling*/
+.photo {
+  display: flex;
+  justify-content: center;
+}
+.photo img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 20px rgba(197, 0, 197, 0.5);
+  border: 2px solid rgba(197, 0, 197, 0.6);
+}
+/*left right alignment*/
+.timeline-item.left .content {
+  justify-self: end;
+  margin-right: 2rem;
+  /*border: solid white;*/
+}
 
+.timeline-item.left .photo {
+  justify-self: start;
+  margin-left: 2rem;
+}
+
+.timeline-item.right .content {
+  justify-self: start;
+  margin-left: 2rem;
+}
+
+.timeline-item.right .photo {
+  justify-self: end;
+  margin-right: 2rem;
+}
+/*mobile*/
+@media (max-width: 575.98px) {
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .photo,
+  .content {
+    justify-self: center !important;
+    margin: 0 !important;
+  }
+}
 
 
 
