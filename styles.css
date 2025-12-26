@@ -17,7 +17,7 @@ body
     text-decoration: none;
     font-weight: 500;
 
-    background: transparent;
+    background: black;
     transition: all 0.3s ease;
 }
 
@@ -27,9 +27,15 @@ body
     transform: scale(1.05);
 }
 
+/*.navbar {
+  background-color: rgb(0, 0, 0);
+}*/
+
+
 .navbar .nav-link
 {
-    color: white;
+    color: white;  
+    filter: drop-shadow(0 0 5px rgb(0, 0, 0)) drop-shadow(0 0 30px rgb(0, 0, 0));
 }
 
 nav a 
@@ -151,17 +157,15 @@ nav a
     padding-top: 70px; 
     margin: 30px;
 }
-.coursebox {
-  
+.coursebox { 
     width: 250px;
     margin: 10px;
     text-align: left;
-    /*align-items: center;*/
     gap: 0 0.2rem;
     color:rgb(247, 247, 247);
     font-size: 0.9rem;
-    background-color: rgb(72, 72, 72);
-    padding: 0.7rem 1rem;
+    background: linear-gradient(180deg,rgb(80, 80, 80),rgb(60, 60, 60));
+    padding: 1rem 1.1rem;
     border-radius: 0.4rem;
     box-shadow: 0 0.1rem 0.2rem rgb(45, 4, 79), 0 0.1rem 0.5rem rgb(34, 3, 78), 0 0.2rem 1.5rem rgb(49, 3, 82);
 }
@@ -181,16 +185,14 @@ nav a
     transition: all 0.3s ease;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-   
+    transform: translateY(1px);
+    transition: all 0.3s ease; 
 }
 .coursebox:hover .enroll-btn {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    display: inline-block;
-    margin-top: 10px;
+    display: inline-block;  
 }
 .enroll-btn:hover {
     background-color: rgb(197, 0, 197);
@@ -203,6 +205,31 @@ nav a
     visibility: visible;
     transform: none;
   }
+}
+.coursebox h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.3px;
+}
+.course-meta {
+  font-size: 0.75rem;
+  opacity: 0.75;
+  margin-bottom: 0.6rem;
+}
+.coursebox ul {
+  padding-left: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.coursebox li {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-bottom: 0.35rem;
+  opacity: 0.9;
+}
+.coursebox li::marker {
+  color: rgb(197, 0, 197);
 }
 
 
