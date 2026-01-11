@@ -3,8 +3,10 @@ body
     
      background-color: #000000;
      scroll-behavior: smooth;
-     font-family: 'Nunito', sans-serif;
-     color: white;
+     
+     color: #e6e6e6;
+     font-family: "Inter", sans-serif;   
+     font-optical-sizing: auto;
      
 }
 
@@ -22,8 +24,8 @@ body
 }
 
 .signin-btn:hover {
-    background-color: rgb(197, 0, 197);
-    border-color: rgb(197, 0, 197);
+    background-color: #3BC9DB;
+    border-color: #3BC9DB;
     transform: scale(1.05);
 }
 
@@ -47,7 +49,7 @@ nav a
 
 .nav-link:hover
 {
-    color:rgb(197, 0, 197);
+    color:rgb(84, 155, 218);
     transition: all 0.5s ease;
     transform: scale(1.1);
 
@@ -61,15 +63,19 @@ nav a
      padding-top: 70px;  
 }
 
+
 #niviname
 {
-    margin: 10px;
+    margin-left: 10px;  
     
 }
 
 #desig 
 {
-    margin: 20px;
+    margin-left: 10px;  
+    font-size: 20px;
+    color: rgb(35, 199, 14);
+  
     
 }
 #role-text {
@@ -87,16 +93,140 @@ nav a
 
 #profilephoto
 {
-   width: 300px;
+   width: 100px;
    aspect-ratio: 1/1;
-   border-radius: 50%;
    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
-   margin-bottom: 30px;;
+   margin-bottom: 10px;  
 }
+
+.educator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.educator-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  
+  width: 100px;
+
+}
+.aboutteacher {
+   width: 80vw;
+   margin: 0 auto;
+   justify-content: center;
+   padding-bottom: 100px;
+}
+
+
+.brand {
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  gap: 0.2rem;
+  margin: 20px;
+  min-width: 100;
+}
+.words{
+  transform: translateY(60px);
+  font-size: 90px;
+}
+.hota {
+  color:aqua;
+  margin-right: 40px;
+  /*animation presetter*/
+  opacity: 0;
+  animation: textappear 0.7s ease-out forwards;
+  animation-delay: 1.6s;
+}
+.yte {
+  color:rgb(84, 155, 218);
+  /*animation presetter*/
+  opacity: 0;
+  animation: textappear 0.7s ease-out forwards;
+  animation-delay: 1.8s;
+}
+.logoc {
+  /*animation presetter*/
+  opacity: 0.5;
+  transform: translateX(170px) scale(0.7); 
+  animation: logoPopC 0.7s ease-out forwards,
+   logomove 0.8s ease-out forwards;
+  animation-delay: 0s, 0.8s;
+}
+.logob {
+  /*animation presetter*/
+  opacity: 0.5;
+  transform: translateX(-30px) scale(0.7);
+  animation-delay: 0.5s;
+  animation: logoPopB 0.7s ease-out forwards,
+  logomove 0.8s ease-out forwards;
+  animation-delay: 0s, 0.8s;
+  
+}
+
+@keyframes logoPopC {
+  to {
+    opacity: 1;
+    transform: translateX(170px) scale(1);    
+  }
+}
+@keyframes logoPopB {
+  to {
+    opacity: 1;
+    transform: translateX(-30px) scale(1);  
+  }
+}
+@keyframes logomove {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes textappear {
+  
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  
+  .words {
+    font-size: 80px;
+    margin: 0;
+  }
+
+  
+  .hota {
+    transform: translateX(-40px) translateY(90px);
+  }
+
+  .yte {
+    transform: translateX(-10px) translateY(50px);
+  }
+
+}
+
+
 
 #tagline
 {
-    margin: 20px;
+    margin: 30px;
+    font-size: 30px;
+    animation: textappear  0.7s ease-out forwards;
+    opacity: 0;
+    animation-delay: 2.5s;
 }
 
 .hovereffect
@@ -119,11 +249,11 @@ nav a
 {
     transition: all 1s ease;
     transform: scale(1.1);
-    color:rgb(197, 0, 197);  
-    border: 3px solid violet;  
+    color:aqua;  
+    border: none;  
 }
 #aboutlogo:hover {
-    filter: drop-shadow(0 0 5px violet) drop-shadow(0 0 10px violet);
+    filter: drop-shadow(0 0 5px aqua) drop-shadow(0 0 10px aqua);
     transform: scale(1.2);
     transition: all 0.5s ease;
 }
@@ -135,6 +265,8 @@ nav a
     align-content: center;
     padding-top: 70px; 
     margin: 20px;
+    font-size: 20px;
+    font-weight: 50px;
     
 }
 .abouttext {
@@ -167,10 +299,12 @@ nav a
     background: linear-gradient(180deg,rgb(80, 80, 80),rgb(60, 60, 60));
     padding: 1rem 1.1rem;
     border-radius: 0.4rem;
-    box-shadow: 0 0.1rem 0.2rem rgb(45, 4, 79), 0 0.1rem 0.5rem rgb(34, 3, 78), 0 0.2rem 1.5rem rgb(49, 3, 82);
+    box-shadow: 0 0.1rem 0.2rem rgb(45, 4, 79), 0 0.1rem 0.5rem rgb(34, 3, 78), 0 0.2rem 1.5rem rgb(3, 47, 82);
+    position: relative;
+    padding-bottom: 3rem;
 }
 .coursebox:hover {
-    filter: drop-shadow(0 0 5px violet) drop-shadow(0 0 10px violet);
+    filter: drop-shadow(0 0 5px aqua) drop-shadow(0 0 10px aqua);
     transform: scale(1.05);
     transition: all 0.5s ease; 
 }
@@ -187,6 +321,10 @@ nav a
     visibility: hidden;
     transform: translateY(1px);
     transition: all 0.3s ease; 
+    position: absolute;
+    bottom: 0.8rem;
+    left: 1rem;
+
 }
 .coursebox:hover .enroll-btn {
     opacity: 1;
@@ -195,7 +333,8 @@ nav a
     display: inline-block;  
 }
 .enroll-btn:hover {
-    background-color: rgb(197, 0, 197);
+    background-color: aqua;
+    color:black;
     border-color: rgb(29, 4, 29);
     transform: scale(1.05);
 }
@@ -229,7 +368,7 @@ nav a
   opacity: 0.9;
 }
 .coursebox li::marker {
-  color: rgb(197, 0, 197);
+  color: aqua;
 }
 
 
@@ -297,7 +436,7 @@ nav a
     background-color: rgb(72, 72, 72);
     padding: 0.7rem 1rem;
     border-radius: 0.4rem;
-    box-shadow: 0 0.1rem 0.2rem rgb(45, 4, 79), 0 0.1rem 0.5rem rgb(34, 3, 78), 0 0.2rem 1.5rem rgb(49, 3, 82);
+    box-shadow: 0 0.1rem 0.2rem rgb(5, 42, 111), 0 0.1rem 0.5rem rgb(13, 3, 78), 0 0.2rem 1.5rem rgb(1, 34, 71);
 }
 .tag p {
     margin-bottom: 0.4rem;
@@ -373,6 +512,26 @@ nav a
   }
 }
 
+.autoblur {
+  animation: autobluranimation linear both;
+  animation-timeline: view(50% auto);
+}
+
+@keyframes autobluranimation {
+  0% {
+    filter: blur(20px);
+  }
+  35%, 45% {
+    filter: blur(0px);
+  }
+  70% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
 
 
 /* Philosophy tree*/
@@ -409,9 +568,15 @@ nav a
 /*Content box*/
 .content {
   color: white;
-  padding: 2.2rem 0rem 2.2rem 2rem ;
   max-width: 420px;
-  font-size: 1.3rem;  
+  font-size: 1.3rem;   
+}
+.mainline {
+  color: yellow;
+}
+.subline {
+  font-size: 0.9rem;
+  opacity: 0.75;
 }
 /*photo styling*/
 .photo {
@@ -423,14 +588,14 @@ nav a
   height: 150px;
   object-fit: cover;
   border-radius: 0.4rem;
-  box-shadow: 0 0 20px rgba(197, 0, 197, 0.5);
-  border: 2px solid rgba(197, 0, 197, 0.6);
+  box-shadow: 0 0 20px rgba(242, 242, 1, 0.5);
+  border: 2px solid rgba(212, 128, 1, 0.6);
 }
 /*left right alignment*/
 .timeline-item.left .content {
   justify-self: end;
   margin-right: 2rem;
-  /*border: solid white;*/
+  text-align:right;
 }
 
 .timeline-item.left .photo {
@@ -441,6 +606,7 @@ nav a
 .timeline-item.right .content {
   justify-self: start;
   margin-left: 2rem;
+  text-align:left;
 }
 
 .timeline-item.right .photo {
@@ -464,6 +630,40 @@ nav a
     margin: 0 !important;
   }
 }
+
+.accomplishment {
+  padding: 20px 0; 
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 1.2rem 0;
+  padding-left: 1.6rem;
+  position: relative;
+  color: #f5f5f5;
+  letter-spacing: 0.3px; 
+}
+.accent {
+  color: greenyellow;
+}
+.spacer {
+  height: 100px;
+}
+
+.contactlinks {
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;  
+    width:  60vw;
+}
+.clink {
+  text-decoration: none;
+  color: #f5f5f5;
+}
+.contactlogo {
+  width: 30px;
+  margin: 10px;
+}
+
 
 
 
