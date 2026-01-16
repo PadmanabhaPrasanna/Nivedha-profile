@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const mongoose = require("mongoose");
 
-
+//since public folder added, this file might not work. Use only for reference.
 //MongDB connect (copy pasted from mongDB site, delete disconnect)
 const uri = "mongodb+srv://nivedhaprasannaindia:4132231400@cluster1.pizbnnd.mongodb.net/?appName=Cluster1";
 const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
