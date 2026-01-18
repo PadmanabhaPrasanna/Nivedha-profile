@@ -1,12 +1,17 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
+//DB pass encryption
+require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 //MongDB connect (copy pasted from mongDB site, delete disconnect)
-const uri = "mongodb+srv://nivedhaprasannaindia:4132231400@cluster1.pizbnnd.mongodb.net/?appName=Cluster1";
+//const uri = "mongodb+srv://nivedhaprasannaindia:4132231400@cluster1.pizbnnd.mongodb.net/?appName=Cluster1";
+
+//DB pass encryption
+const uri = process.env.MONGO_URI;
 const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
 async function run() {
   try {
@@ -29,7 +34,7 @@ const formData = mongoose.model("FormData", formSchema);
 
 
 /* This part serves all static files*/
-app.use(express.static(path.join(__dirname, "/")));
+app.use(express.static(path.join(__dirname, "/frontend")));
 
 
 /* Parses form data - meaning converts string data to json */
