@@ -1,0 +1,63 @@
+body 
+{
+    
+     background-color: #000000;
+     scroll-behavior: smooth;
+     
+     color: #e6e6e6;
+     font-family: "Inter", sans-serif;   
+     font-optical-sizing: auto;   
+     min-height: 100vh;  
+}
+
+.pagecenter {
+     min-height: 90vh; 
+      display: flex;
+     justify-content: center; /* vertical */
+     align-items: center;    
+
+}
+.loginbox {
+    background-color: rgb(6, 31, 41);
+    display: flex;
+    border: solid rgb(4, 34, 37);
+    margin: 0 auto;
+    border: 1px solid whitesmoke;
+    text-align: center;
+    padding: 20px;  
+    width:  60vw;
+    justify-content: center; 
+    align-items: center;  
+}
+.inputbox {
+    border-radius: 5px;
+    width: 50vw;   
+}
+.site-footer {
+  background: #111;
+  color: #ccc;
+  text-align: justify;
+  padding: 15px 0;
+}
+.site-footer a {
+    margin: 10px;
+}
+
+.signin-btn {
+    
+    padding: 6px 18px;
+    border-radius: 20px;
+    width: 120px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+
+    background: black;
+    transition: all 0.3s ease;
+}
+.signin-btn:hover {
+    background-color: #3BC9DB;
+    border-color: #3BC9DB;
+    transform: scale(1.05);
+}
