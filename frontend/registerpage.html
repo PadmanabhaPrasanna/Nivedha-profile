@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+    <title>CB Register</title>
+    <link rel="icon" type="image/png" href="logo.png"> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    <!--Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+   
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styleslogin.css">
+    <script src="scriptregister.js" defer></script>
+</head>
+
+<body>
+     <!--1. Navigation bar -->
+    <nav class="navbar navbar-expand-sm  fixed-top navbar-dark">
+      <div class="container-fluid d-flex align-items-center">
+
+         <!--Logo on left-->
+         <a class="navbar-brand" href="index.html"><img src="logo.png" width="50px"></a>
+
+      </div>
+       <!--3. Sign IN-->
+       <a href="loginpage.html" class="signin-btn">Go back</a>
+    </nav>
+
+    <div class="pagecenter">
+    <div id="registerbox" class="loginbox">
+        <form>
+            <h2>Register to Chota Byte</h2><br>
+            <input id="regname" placeholder="Name" class="inputbox input-height"><br><br>
+            <input id="regemail" placeholder="Email" class="inputbox input-height"><br><br>
+            <input list="countries" id="regcountry" name="country" placeholder="Country" class="inputbox input-height"><br><br>
+              <datalist id="countries">
+                <option value="Afghanistan"><option value="Albania"><option value="Algeria"><option value="Andorra"><option value="Angola"><option value="Antigua and Barbuda"><option value="Argentina"><option value="Armenia"><option value="Australia"><option value="Austria"><option value="Azerbaijan"><option value="Bahamas"><option value="Bahrain"><option value="Bangladesh"><option value="Barbados"><option value="Belarus"><option value="Belgium"><option value="Belize"><option value="Benin"><option value="Bhutan"><option value="Bolivia"><option value="Bosnia and Herzegovina"><option value="Botswana"><option value="Brazil"><option value="Brunei"><option value="Bulgaria"><option value="Burkina Faso"><option value="Burundi"><option value="Cambodia"><option value="Cameroon"><option value="Canada"><option value="Cape Verde"><option value="Central African Republic"><option value="Chad"><option value="Chile"><option value="China"><option value="Colombia"><option value="Comoros"><option value="Congo"><option value="Costa Rica"><option value="Croatia"><option value="Cuba"><option value="Cyprus"><option value="Czech Republic"><option value="Denmark"><option value="Djibouti"><option value="Dominica"><option value="Dominican Republic"><option value="Ecuador"><option value="Egypt"><option value="El Salvador"><option value="Equatorial Guinea"><option value="Eritrea"><option value="Estonia"><option value="Eswatini"><option value="Ethiopia"><option value="Fiji"><option value="Finland"><option value="France"><option value="Germany"><option value="Greece"><option value="India"><option value="Indonesia"><option value="Ireland"><option value="Israel"><option value="Italy"><option value="Japan"><option value="Malaysia"><option value="Netherlands"><option value="New Zealand"><option value="Norway"><option value="Philippines"><option value="Portugal"><option value="Qatar"><option value="Saudi Arabia"><option value="Singapore"><option value="South Africa"><option value="South Korea"><option value="Spain"><option value="Sri Lanka"><option value="Sweden"><option value="Switzerland"><option value="Thailand"><option value="United Arab Emirates"><option value="United Kingdom"><option value="United States"><option value="Vietnam"><option value="Zimbabwe">
+              </datalist>
+
+            <div class="phoneinp input-height">
+            <input id="regext" readonly>
+            <input id="regphone" placeholder="Phone"><br><br>
+            </div>
+            <br>
+
+            <input id="regpwd" placeholder="Enter Password" class="inputbox input-height" type="password"><br><br>
+            <input id="regconfirmpwd" placeholder="Confirm Password" class="inputbox input-height"  type="password"><br><br>
+
+            
+            <button type="submit" class="btn btn-success hovereffect">Register</button><br><br>
+            
+        </form>
+    </div>
+    </div>
+</body>

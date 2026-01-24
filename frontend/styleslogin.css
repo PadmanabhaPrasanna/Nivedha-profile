@@ -7,32 +7,37 @@ body
      color: #e6e6e6;
      font-family: "Inter", sans-serif;   
      font-optical-sizing: auto;   
-     min-height: 100vh;  
+     min-height: 100vh; 
+}
+
+.input-height {
+    height: 38px;
+    line-height: 38px;
 }
 
 .pagecenter {
      min-height: 90vh; 
-      display: flex;
-     justify-content: center; /* vertical */
+     display: flex;
+     justify-content: center; 
      align-items: center;    
 
 }
 .loginbox {
     background-color: rgb(6, 31, 41);
-    display: flex;
-    border: solid rgb(4, 34, 37);
-    margin: 0 auto;
     border: 1px solid whitesmoke;
     text-align: center;
-    padding: 20px;  
-    width:  60vw;
+    padding: 10px;  
     justify-content: center; 
     align-items: center;  
+    width: 90%;
+    max-width: 700px; ;
+    
 }
 .inputbox {
     border-radius: 5px;
-    width: 50vw;   
+    width: 80%;
 }
+
 .site-footer {
   background: #111;
   color: #ccc;
@@ -52,7 +57,6 @@ body
     color: white;
     text-decoration: none;
     font-weight: 500;
-
     background: black;
     transition: all 0.3s ease;
 }
@@ -61,3 +65,24 @@ body
     border-color: #3BC9DB;
     transform: scale(1.05);
 }
+.phoneinp {
+    display: flex;
+    width: 80%;
+    border-radius: 5px;
+    margin: 0 auto;
+   
+}
+#regext {
+    width: 70px;  
+    border-radius: 5px;       
+    flex-shrink: 0;
+
+}
+#regphone {
+    flex: 1;             
+    min-width: 0; 
+    border-radius: 5px;
+    
+}
+
+
