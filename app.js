@@ -3,6 +3,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 //DB pass encryption
 require("dotenv").config();
+const bcrypt = require("bcrypt");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -29,8 +30,12 @@ run();
 //Creating schema for mongDB:
 //"FormData is the name in which it will be stored in DB i.e FormDatas"
 //Keep Name, Country, Mail, Message same as that of frontend JS.
+//First part is index.html form schema
 const formSchema = new mongoose.Schema({Name: String, Country: String, Mail: String, Message: String});
 const formData = mongoose.model("FormData", formSchema);  
+//This part is registerpage.html form schema
+const regSchema = new mongoose.Schema({Name: String, Email: String, Country: String, Extension: String, Phone: String, Password: String});
+const regData = mongoose.model("RegistrationData",regSchema);
 
 
 /* This part serves all static files*/
@@ -40,12 +45,28 @@ app.use(express.static(path.join(__dirname, "/frontend")));
 /* Parses form data - meaning converts string data to json */
 app.use(express.json({limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
-/* Saves data in DB */
+/* Saves index.html form data in DB */
 app.post("/saveform", async (req, res) => {
-  try {
+  try { 
     const newEntry = new formData(req.body);
     await newEntry.save();
     res.send("Saved in DB");
+  } catch (err) {
+    res.status(500).send("Failed to save");
+  } 
+});
+
+/* Saves registration details in DB */
+app.post("/saveregistrationform", async (req,res) => {
+  try {
+    const regEntry = new regData(req.body);
+    //console.log(regEntry);
+    //console.log(regEntry.Password);
+    regEntry.Password = await bcrypt.hash(regEntry.Password, 10);
+    //console.log(regEntry.Password);
+
+    await regEntry.save();
+    res.send("Saved in DB")
   } catch (err) {
     res.status(500).send("Failed to save");
   }

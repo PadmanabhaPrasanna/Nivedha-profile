@@ -35,23 +35,23 @@
 
     <div class="pagecenter">
     <div id="registerbox" class="loginbox">
-        <form>
+        <form id="registerform">
             <h2>Register to Chota Byte</h2><br>
-            <input id="regname" placeholder="Name" class="inputbox input-height"><br><br>
-            <input id="regemail" placeholder="Email" class="inputbox input-height"><br><br>
-            <input list="countries" id="regcountry" name="country" placeholder="Country" class="inputbox input-height"><br><br>
+            <input id="regname" placeholder="Name" class="inputbox input-height" required><br><br>
+            <input id="regemail" placeholder="Email" class="inputbox input-height" type="email" required><br><br>
+            <input list="countries" id="regcountry" name="country" placeholder="Country" class="inputbox input-height" required><br><br>
               <datalist id="countries">
                 <option value="Afghanistan"><option value="Albania"><option value="Algeria"><option value="Andorra"><option value="Angola"><option value="Antigua and Barbuda"><option value="Argentina"><option value="Armenia"><option value="Australia"><option value="Austria"><option value="Azerbaijan"><option value="Bahamas"><option value="Bahrain"><option value="Bangladesh"><option value="Barbados"><option value="Belarus"><option value="Belgium"><option value="Belize"><option value="Benin"><option value="Bhutan"><option value="Bolivia"><option value="Bosnia and Herzegovina"><option value="Botswana"><option value="Brazil"><option value="Brunei"><option value="Bulgaria"><option value="Burkina Faso"><option value="Burundi"><option value="Cambodia"><option value="Cameroon"><option value="Canada"><option value="Cape Verde"><option value="Central African Republic"><option value="Chad"><option value="Chile"><option value="China"><option value="Colombia"><option value="Comoros"><option value="Congo"><option value="Costa Rica"><option value="Croatia"><option value="Cuba"><option value="Cyprus"><option value="Czech Republic"><option value="Denmark"><option value="Djibouti"><option value="Dominica"><option value="Dominican Republic"><option value="Ecuador"><option value="Egypt"><option value="El Salvador"><option value="Equatorial Guinea"><option value="Eritrea"><option value="Estonia"><option value="Eswatini"><option value="Ethiopia"><option value="Fiji"><option value="Finland"><option value="France"><option value="Germany"><option value="Greece"><option value="India"><option value="Indonesia"><option value="Ireland"><option value="Israel"><option value="Italy"><option value="Japan"><option value="Malaysia"><option value="Netherlands"><option value="New Zealand"><option value="Norway"><option value="Philippines"><option value="Portugal"><option value="Qatar"><option value="Saudi Arabia"><option value="Singapore"><option value="South Africa"><option value="South Korea"><option value="Spain"><option value="Sri Lanka"><option value="Sweden"><option value="Switzerland"><option value="Thailand"><option value="United Arab Emirates"><option value="United Kingdom"><option value="United States"><option value="Vietnam"><option value="Zimbabwe">
               </datalist>
 
             <div class="phoneinp input-height">
-            <input id="regext" readonly>
-            <input id="regphone" placeholder="Phone"><br><br>
+            <input id="regext" placeholder="Extn" readonly>
+            <input id="regphone" placeholder="Phone" maxlength="10" required><br><br>
             </div>
             <br>
 
-            <input id="regpwd" placeholder="Enter Password" class="inputbox input-height" type="password"><br><br>
-            <input id="regconfirmpwd" placeholder="Confirm Password" class="inputbox input-height"  type="password"><br><br>
+            <input id="regpwd" placeholder="Enter Password" class="inputbox input-height" type="password" required><br><br>
+            <input id="regconfirmpwd" placeholder="Confirm Password" class="inputbox input-height"  type="password" required><br><br>
 
             
             <button type="submit" class="btn btn-success hovereffect">Register</button><br><br>
@@ -59,4 +59,56 @@
         </form>
     </div>
     </div>
+
+     <!-- Modal success-->
+        <div class="modal fade" id="ModalSuccess">
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+                 <!-- Modal Header -->
+                   <div class="modal-header">
+                      <h4 class="modal-title">Registration successful!</h4>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                   </div>
+
+                 <!-- Modal body -->
+                   <div class="modal-body">
+                      Go to <a href="loginpage.html">Login Page</a>
+                   </div>
+
+                 <!-- Modal footer -->
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-dark hovereffect" data-bs-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+            </div>
+        </div>
+
+
+        <!-- Modal failure-->
+        <div class="modal fade" id="ModalFail">
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+                 <!-- Modal Header -->
+                   <div class="modal-header">
+                      <h4 class="modal-title">Some Error Occured..</h4>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                   </div>
+
+                 <!-- Modal body -->
+                   <div class="modal-body">
+                      Please try again!
+                   </div>
+
+                 <!-- Modal footer -->
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-dark hovereffect" data-bs-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+            </div>
+        </div>
+
 </body>

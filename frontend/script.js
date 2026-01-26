@@ -34,7 +34,7 @@ function frontSubmit(e)
     const Message = document.getElementById("Message").value;
 
     const saveObj = {Name: Name, Country: Country, Mail: Mail, Message: Message};
-    console.log(saveObj);
+    //console.log(saveObj);
 
 
     fetch("/saveform", {method:"POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(saveObj)})
