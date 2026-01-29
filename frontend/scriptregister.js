@@ -37,9 +37,7 @@ function regsubmit(e) {
         return;
     }
 
-
     const regObj = {Name: Regname, Email: Regemail, Country: Regcountry, Extension: Regext, Phone: Regphone, Password: Regpwd};
-
     fetch("/saveregistrationform", {method:"POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(regObj)})
     .then(res => { if (!res.ok){throw new Error("Failed to save form");} return res.text();})
     .then(msg => 
@@ -61,3 +59,4 @@ function regsubmit(e) {
     console.log(regObj);
 
 }
+

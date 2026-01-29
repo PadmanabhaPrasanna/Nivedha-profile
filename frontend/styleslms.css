@@ -30,7 +30,7 @@ body
     justify-content: center; 
     align-items: center;  
     width: 90%;
-    max-width: 700px; ;
+    max-width: 700px; 
     
 }
 .inputbox {
@@ -83,6 +83,29 @@ body
     min-width: 0; 
     border-radius: 5px;
     
+}
+
+.dashboardcenter {  
+     display: flex;
+     justify-content: center; 
+     margin-top: 100px; 
+}
+
+.userdetailsbox {
+    background-color: rgb(6, 31, 41);
+    border: 1px solid whitesmoke;
+    text-align: center;
+    padding: 10px;  
+    justify-content: center; 
+    align-items: center;  
+    width: 90%;
+    max-width: 700px; 
+}
+.username {
+    display: flex;
+    justify-content: left; 
+    padding-top: 10px;
+    padding-left: 50px;
 }
 
 

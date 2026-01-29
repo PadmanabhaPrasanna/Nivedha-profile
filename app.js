@@ -3,7 +3,10 @@ const path = require("path");
 const mongoose = require("mongoose");
 //DB pass encryption
 require("dotenv").config();
+//password hashing
 const bcrypt = require("bcrypt");
+//jwt
+const jwt = require("jsonwebtoken");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -38,6 +41,7 @@ const regSchema = new mongoose.Schema({Name: String, Email: String, Country: Str
 const regData = mongoose.model("RegistrationData",regSchema);
 
 
+
 /* This part serves all static files*/
 app.use(express.static(path.join(__dirname, "/frontend")));
 
@@ -69,6 +73,40 @@ app.post("/saveregistrationform", async (req,res) => {
     res.send("Saved in DB")
   } catch (err) {
     res.status(500).send("Failed to save");
+  }
+});
+
+/* Login authentication */
+app.post("/loginauthentication", async (req,res)=> {
+  try {
+    //login inputs at loginInp:
+    const loginInp = req.body;
+    //console.log(loginInp);
+    //console.log(loginInp.Email);
+
+    //See if that mail ID exist:
+    const User = await regData.findOne({Email: loginInp.Email });
+    if (!User) {
+      return res.status(401).send("DB says: User not found");
+    }
+
+    //Check password:
+    const passwordMatch = await bcrypt.compare(loginInp.Password, User.Password);
+    if (!passwordMatch) {
+      return res.status(401).send("Invalid password");
+    }
+
+    //create JWT important
+    const token = jwt.sign({userID: User._id}, process.env.JWT_SECRET, {expiresIn: "1h"});
+    res.json({token});
+
+    //Success:
+    //res.send("Login successful");
+
+  }
+  catch (err) {
+    res.status(500).send("Login failed");
+
   }
 });
 
